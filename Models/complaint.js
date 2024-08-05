@@ -1,22 +1,45 @@
+const db = require('../Config/db');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ComplaintSchema = new Schema({
-    id: String,
-    complaint_id: String,
-    complaint_type_title: String,
-    dept: String,
-    tat_type: String,
-    tat_duration: Number,
-    priority: String,
-    escalation_l1: String,
-    escalation_l2: String,
-    escalation_l3: String,
-    status: String,
-    created_by_user: String,
-    created_time: { type: Date, default: Date.now },
-    last_updated_time: { type: Date, default: Date.now }
+    id: {
+        type: String
+    },
+    complaint_id: {
+        type: String
+    },
+    complaint_type_title: {
+        type: String
+    },
+    dept: {
+        type: String
+    },
+    tat_type: {
+        type: String
+    },
+    tat_duration: {
+        type: String
+    },
+    priority: {
+        type: String
+    },
+    escalation_l1: {
+        type: String
+    },
+    escalation_l2: {
+        type: String
+    },
+    escalation_l3: {
+        type: String
+    },
+    status: {
+        type: String
+    },
+    created_by_user: {
+        type: String
+    }
 }, { timestamps: true });
 
-const ComplaintModel = mongoose.model('Complaint', ComplaintSchema);
+const ComplaintModel = db.model('Complaint', ComplaintSchema);
 module.exports = ComplaintModel;

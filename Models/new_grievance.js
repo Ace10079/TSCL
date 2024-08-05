@@ -1,3 +1,4 @@
+const db = require('../Config/db');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
@@ -16,9 +17,7 @@ const NewGrievanceSchema = new Schema({
     grievance_mode: String,
     status: String,
     escalation_level: String,
-    created_time: { type: Date, default: Date.now },
-    last_updated_time: { type: Date, default: Date.now }
 }, { timestamps: true });
 
-const NewGrievanceModel = mongoose.model('NewGrievance', NewGrievanceSchema);
+const NewGrievanceModel = db.model('NewGrievance', NewGrievanceSchema);
 module.exports = NewGrievanceModel;

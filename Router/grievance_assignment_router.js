@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const grievanceAssignmentController = require('../Controller/grievance_assignment_controller');
 
-router.post('/grievance-assignment', grievanceAssignmentController.createGrievanceAssignment);
-router.get('/grievance-assignments', grievanceAssignmentController.getAllGrievanceAssignments);
+router.post('/post', grievanceAssignmentController.createGrievanceAssignment);
+router.get('/get', grievanceAssignmentController.getAllGrievanceAssignments);
 
 module.exports = router;

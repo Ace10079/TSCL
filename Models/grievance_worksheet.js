@@ -1,3 +1,4 @@
+const db = require('../Config/db');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
@@ -6,8 +7,7 @@ const GrievanceWorksheetSchema = new Schema({
     grievance_id: String,
     worksheet_name: String,
     created_by_user: String,
-    created_time: { type: Date, default: Date.now }
 }, { timestamps: true });
 
-const GrievanceWorksheetModel = mongoose.model('GrievanceWorksheet', GrievanceWorksheetSchema);
+const GrievanceWorksheetModel = db.model('GrievanceWorksheet', GrievanceWorksheetSchema);
 module.exports = GrievanceWorksheetModel;

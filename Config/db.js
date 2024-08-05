@@ -1,11 +1,8 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
 
-const connection = mongoose.createConnection(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+const connection = mongoose.createConnection('mongodb+srv://karan:karan@cluster0.xi3owp9.mongodb.net/TSCL?retryWrites=true&w=majority&appName=Cluster0');
 
+// Event listeners for the connection
 connection.on('open', () => {
     console.log("MongoDB Connected");
 }).on('error', (error) => {
