@@ -20,6 +20,8 @@ const grievanceWorksheetAttachmentRouter = require('./Router/grievance_worksheet
 const grievanceEscalationRouter = require('./Router/grievance_escalation_router');
 const roleRouter = require('./Router/role_router');
 const roleAccessLevelRouter = require('./Router/role_access_level_router');
+const DepartmentRouter=require('./Router/department_routes')
+const OrganzationRouter=require('./Router/organization_routes');
 
 app.use(body_parser.json());
 
@@ -39,6 +41,8 @@ app.use('/grievance-worksheet-attachment', grievanceWorksheetAttachmentRouter);
 app.use('/grievance-escalation', grievanceEscalationRouter);
 app.use('/role', roleRouter);
 app.use('/role-access-level', roleAccessLevelRouter);
+app.use('/department',DepartmentRouter);
+app.use('/organization',OrganzationRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

@@ -29,3 +29,19 @@ exports.getAllUsers = async (req, res, next) => {
         next(error);
     }
 };
+exports.getUserById = async (req, res, next) => {
+    try {
+        const { user_id } = req.query;
+        const zone = await UserService.getZoneById(user_id);
+        if (!zone) {
+            return res.status(404).json({ status: false, message: "Zone not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Zone retrieved successfully",
+            data: zone
+        });
+    } catch (error) {
+        next(error);
+    }
+};

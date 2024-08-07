@@ -4,5 +4,5 @@ const zoneController = require('../Controller/zone_Controller');
 
 router.post('/post', zoneController.createZone);
 router.get('/get', zoneController.getAllZones);
-router.get('/getbyid/:zone_id', zoneController.getZoneById);
+router.get('/getbyid', zoneController.getZoneById);
 module.exports = router;

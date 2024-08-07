@@ -8,3 +8,6 @@ exports.createGrievanceAssignment = async (grievanceAssignmentData) => {
 exports.getAllGrievanceAssignments = async () => {
     return await GrievanceAssignmentModel.find();
 };
+exports.getGrievanceAssignmentById = async (grievance_id) => {
+    return await GrievanceAssignmentModel.findOne({ grievance_id });
+};

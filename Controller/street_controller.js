@@ -32,7 +32,7 @@ exports.getAllStreets = async (req, res, next) => {
 
 exports.getStreetById = async (req, res, next) => {
     try {
-        const { ward_id, street_id } = req.params;
+        const { ward_id, street_id } = req.query;
         const street = await StreetService.getStreetById(ward_id, street_id);
         if (!street) {
             return res.status(404).json({ status: false, message: "Street not found" });

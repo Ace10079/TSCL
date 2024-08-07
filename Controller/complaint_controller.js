@@ -29,3 +29,20 @@ exports.getAllComplaints = async (req, res, next) => {
         next(error);
     }
 };
+exports.getComplaintById = async (req, res, next) => {
+    try {
+        const { complaint_id } = req.query;
+        const complaint = await ComplaintService.getComplaintById(complaint_id);
+        if (!complaint) {
+            return res.status(404).json({ status: false, message: "Complaint not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Complaint retrieved successfully",
+            data: complaint
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+

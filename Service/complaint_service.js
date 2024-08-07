@@ -8,3 +8,6 @@ exports.createComplaint = async (complaintData) => {
 exports.getAllComplaints = async () => {
     return await ComplaintModel.find();
 };
+exports.getComplaintById = async (complaint_id) => {
+    return await ComplaintModel.findOne({ complaint_id });
+};

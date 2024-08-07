@@ -27,3 +27,20 @@ exports.getAllGrievanceAssignments = async (req, res, next) => {
         next(error);
     }
 };
+exports.getGrievanceAssignmentById = async (req, res, next) => {
+    try {
+        const { grievance_id } = req.query;
+        const grievanceAssignment = await GrievanceAssignmentService.getGrievanceAssignmentById(grievance_id);
+        if (!grievanceAssignment) {
+            return res.status(404).json({ status: false, message: "Grievance assignment not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Grievance assignment retrieved successfully",
+            data: grievanceAssignment
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+

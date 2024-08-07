@@ -18,13 +18,10 @@ const WardSchema = new Schema({
     zone_name: {
         type: String
     },
+    ward_name:{
+        type: String
+    },
     created_by_user: {
-        type: String
-    },
-    created_time: {
-        type: String
-    },
-    last_updated_time: {
         type: String
     }
 }, { timestamps: true });

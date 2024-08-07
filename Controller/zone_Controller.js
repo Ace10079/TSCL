@@ -32,7 +32,7 @@ exports.getAllZones = async (req, res, next) => {
 
 exports.getZoneById = async (req, res, next) => {
     try {
-        const { zone_id } = req.params;
+        const { zone_id } = req.query;
         const zone = await ZoneService.getZoneById(zone_id);
         if (!zone) {
             return res.status(404).json({ status: false, message: "Zone not found" });

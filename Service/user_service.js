@@ -8,3 +8,4 @@ exports.createUser = async (userData) => {
 exports.getAllUsers = async () => {
     return await UserModel.find();
 };
+
