@@ -4,9 +4,6 @@ const { Schema } = mongoose;
 
 
 const OrganizationSchema = new Schema({
-    id: {
-        type: String
-    },
     org_id: {
         type: String
     },

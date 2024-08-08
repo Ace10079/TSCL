@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const RoleSchema = new Schema({
-    id: String,
     role_id: String,
     role_name: String,
     status: String,

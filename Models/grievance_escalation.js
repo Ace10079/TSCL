@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const GrievanceEscalationSchema = new Schema({
-    id: String,
     grievance_id: String,
     escalation_details: String,
     escalation_level: String,

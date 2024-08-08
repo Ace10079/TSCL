@@ -3,9 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ZoneSchema = new Schema({
-    id: {
-        type: String
-    },
     zone_id: {
         type: String
     },

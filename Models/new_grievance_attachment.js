@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const NewGrievanceAttachmentSchema = new Schema({
-    id: String,
     grievance_id: String,
     attachment_name: String,
     created_by_user: String

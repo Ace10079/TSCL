@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const RoleAccessLevelSchema = new Schema({
-    id: String,
     role_id: String,
     feature_access: String,
     access_type: String,

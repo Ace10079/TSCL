@@ -3,9 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const WardSchema = new Schema({
-    id: {
-        type: String
-    },
+
     ward_id: {
         type: String
     },

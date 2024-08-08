@@ -3,9 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ComplaintSchema = new Schema({
-    id: {
-        type: String
-    },
     complaint_id: {
         type: String
     },

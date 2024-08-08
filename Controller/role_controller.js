@@ -1,8 +1,9 @@
 const RoleService = require('../Service/role_service');
-
+const IdcodeServices = require('../Service/idcode_Service');
 exports.createRole = async (req, res, next) => {
     try {
-        const { role_id, role_name, status, created_by_user } = req.body;
+        const {role_name, status, created_by_user } = req.body;
+        const role_id = await IdcodeServices.generateCode("Role");
         const role = await RoleService.createRole({ role_id, role_name, status, created_by_user });
 
         res.status(200).json({

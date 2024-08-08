@@ -3,9 +3,9 @@ const IdcodeServices = require('../Service/idcode_Service');
 
 exports.createStreet = async (req, res, next) => {
     try {
-        const { street_name, ward_id, zone, status, created_by_user } = req.body;
+        const { street_name, ward_id, zone, status, created_by_user,ward_name,zone_id,zone_name } = req.body;
         const street_id = await IdcodeServices.generateCode("Street");
-        const street = await StreetService.createStreet({ street_id, street_name, ward_id, zone, status, created_by_user });
+        const street = await StreetService.createStreet({ street_id, street_name, ward_id, zone, status, created_by_user,ward_name,zone_id,zone_name });
         
         res.status(200).json({
             status: true,

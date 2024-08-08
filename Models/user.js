@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    id: String,
     user_id: String,
     user_name: String,
     dept_name: String,
@@ -14,7 +13,6 @@ const UserSchema = new Schema({
     login_password: String,
     status: String,
     role: String,
-    login_status: String,
 }, { timestamps: true });
 
 const UserModel = db.model('User', UserSchema);

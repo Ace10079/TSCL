@@ -3,9 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const DepartmentSchema = new Schema({
-    id: {
-        type: String
-    },
     dept_id: {
         type: String
     },
