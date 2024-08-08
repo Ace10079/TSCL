@@ -7,7 +7,7 @@ exports.createOrganization = async (req, res, next) => {
         const organization_id = await IdcodeServices.generateCode("Organization");
         const organization = await OrganizationService.createOrganization({ org_id: organization_id, org_name, status, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Organization created successfully",
             data: organization

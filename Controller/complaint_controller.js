@@ -7,7 +7,7 @@ exports.createComplaint = async (req, res, next) => {
         const complaint_id = await IdcodeServices.generateCode("Complaint");
         const complaint = await ComplaintService.createComplaint({ complaint_id, complaint_type_title, dept, tat_type, tat_duration, priority, escalation_l1, escalation_l2, escalation_l3, status, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Complaint created successfully",
             data: complaint

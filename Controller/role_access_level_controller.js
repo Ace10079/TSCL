@@ -7,7 +7,7 @@ exports.createRoleAccessLevel = async (req, res, next) => {
             role_id, feature_access, access_type, status, created_by_user
         });
 
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Role access level created successfully",
             data: roleAccessLevel

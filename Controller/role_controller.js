@@ -5,7 +5,7 @@ exports.createRole = async (req, res, next) => {
         const { role_id, role_name, status, created_by_user } = req.body;
         const role = await RoleService.createRole({ role_id, role_name, status, created_by_user });
 
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Role created successfully",
             data: role

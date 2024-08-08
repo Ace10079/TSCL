@@ -7,7 +7,7 @@ exports.createWard = async (req, res, next) => {
         const ward_id = await IdcodeServices.generateCode("Ward");
         const ward = await WardService.createWard({ ward_id, status, zone_id, zone_name, created_by_user ,ward_name});
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Ward created successfully",
             data: ward

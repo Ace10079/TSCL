@@ -7,7 +7,7 @@ exports.createDepartment = async (req, res, next) => {
         const department_id = await IdcodeServices.generateCode("Department");
         const department = await DepartmentService.createDepartment({ dept_id: department_id, dept_name, org_name, status, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Department created successfully",
             data: department

@@ -7,7 +7,7 @@ exports.createStreet = async (req, res, next) => {
         const street_id = await IdcodeServices.generateCode("Street");
         const street = await StreetService.createStreet({ street_id, street_name, ward_id, zone, status, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Street created successfully",
             data: street

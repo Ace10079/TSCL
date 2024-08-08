@@ -5,7 +5,7 @@ exports.createGrievanceAssignment = async (req, res, next) => {
         const { grievance_id, user_id, assigned_to } = req.body;
         const grievanceAssignment = await GrievanceAssignmentService.createGrievanceAssignment({ grievance_id, user_id, assigned_to });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Grievance assignment created successfully",
             data: grievanceAssignment

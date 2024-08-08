@@ -7,7 +7,7 @@ exports.createZone = async (req, res, next) => {
         const zone_id = await IdcodeServices.generateCode("Zone");
         const zone = await ZoneService.createZone({ zone_id, zone_name, status, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Zone created successfully",
             data: zone

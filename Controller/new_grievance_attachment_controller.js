@@ -5,7 +5,7 @@ exports.createNewGrievanceAttachment = async (req, res, next) => {
         const { grievance_id, attachment_name, created_by_user } = req.body;
         const newGrievanceAttachment = await NewGrievanceAttachmentService.createNewGrievanceAttachment({ grievance_id, attachment_name, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "New grievance attachment created successfully",
             data: newGrievanceAttachment

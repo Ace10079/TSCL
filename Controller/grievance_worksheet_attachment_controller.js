@@ -5,7 +5,7 @@ exports.createGrievanceWorksheetAttachment = async (req, res, next) => {
         const { grievance_id, worksheet_id, attachment_name, created_by_user } = req.body;
         const grievanceWorksheetAttachment = await GrievanceWorksheetAttachmentService.createGrievanceWorksheetAttachment({ grievance_id, worksheet_id, attachment_name, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Grievance worksheet attachment created successfully",
             data: grievanceWorksheetAttachment

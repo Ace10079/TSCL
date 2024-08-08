@@ -7,7 +7,7 @@ exports.createGrievanceEscalation = async (req, res, next) => {
             grievance_id, escalation_details, escalation_level, escalation_department, escalation_to, escalated_user, status
         });
 
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Grievance escalation created successfully",
             data: grievanceEscalation

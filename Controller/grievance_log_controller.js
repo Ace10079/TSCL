@@ -5,7 +5,7 @@ exports.createGrievanceLog = async (req, res, next) => {
         const { grievance_id, log_details, created_by_user } = req.body;
         const grievanceLog = await GrievanceLogService.createGrievanceLog({ grievance_id, log_details, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Grievance log created successfully",
             data: grievanceLog

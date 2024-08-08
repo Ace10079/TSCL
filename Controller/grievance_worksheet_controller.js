@@ -5,7 +5,7 @@ exports.createGrievanceWorksheet = async (req, res, next) => {
         const { grievance_id, worksheet_name, created_by_user } = req.body;
         const grievanceWorksheet = await GrievanceWorksheetService.createGrievanceWorksheet({ grievance_id, worksheet_name, created_by_user });
         
-        res.status(201).json({
+        res.status(200).json({
             status: true,
             message: "Grievance worksheet created successfully",
             data: grievanceWorksheet
