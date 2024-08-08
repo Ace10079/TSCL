@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 const body_parser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 
 const zoneRouter = require('./Router/zone_router');
 const wardRouter = require('./Router/ward_router');
@@ -24,7 +25,7 @@ const DepartmentRouter=require('./Router/department_routes')
 const OrganzationRouter=require('./Router/organization_routes');
 
 app.use(body_parser.json());
-
+app.use(cors());
 app.use('/zone', zoneRouter);
 app.use('/ward', wardRouter);
 app.use('/street', streetRouter);
