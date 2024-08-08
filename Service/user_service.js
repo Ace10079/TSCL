@@ -8,4 +8,7 @@ exports.createUser = async (userData) => {
 exports.getAllUsers = async () => {
     return await UserModel.find();
 };
+exports.deleteUserById = async (user_id) => {
+    return await UserModel.findOneAndDelete({ user_id });
+};
 

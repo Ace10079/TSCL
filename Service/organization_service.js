@@ -11,3 +11,6 @@ exports.getAllOrganizations = async () => {
 exports.getOrganizationById = async (org_id) => {
     return await OrganizationModel.findOne({ org_id });
 };
+exports.deleteOrganizationById = async (org_id) => {
+    return await OrganizationModel.findOneAndDelete({ org_id });
+};

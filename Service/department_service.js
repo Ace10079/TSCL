@@ -11,3 +11,7 @@ exports.getAllDepartments = async () => {
 exports.getDepartmentById = async (dept_id) => {
     return await DepartmentModel.findOne({ dept_id });
 };
+exports.deleteDepartmentById = async (dept_id) => {
+    return await DepartmentModel.findOneAndDelete({ dept_id });
+};
+

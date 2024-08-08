@@ -45,3 +45,18 @@ exports.getPublicUserById = async (req, res, next) => {
         next(error);
     }
 };
+exports.deletePublicUserById = async (req, res, next) => {
+    try {
+        const { public_user_id } = req.query;
+        const result = await PublicUserService.deletePublicUserById(public_user_id);
+        if (!result) {
+            return res.status(404).json({ status: false, message: "Public user not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Public user deleted successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
+};

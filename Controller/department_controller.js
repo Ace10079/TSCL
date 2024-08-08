@@ -44,4 +44,19 @@ exports.getDepartmentById = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+};exports.deleteDepartmentById = async (req, res, next) => {
+    try {
+        const { dept_id } = req.query;
+        const result = await DepartmentService.deleteDepartmentById(dept_id);
+        if (!result) {
+            return res.status(404).json({ status: false, message: "Department not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Department deleted successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
 };
+

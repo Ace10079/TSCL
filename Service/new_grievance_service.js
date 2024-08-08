@@ -11,3 +11,6 @@ exports.getAllNewGrievances = async () => {
 exports.getNewGrievanceById = async (grievance_id) => {
     return await NewGrievanceModel.findOne({ grievance_id });
 };
+exports.deleteNewGrievanceById = async (grievance_id) => {
+    return await NewGrievanceModel.findOneAndDelete({ grievance_id });
+};

@@ -46,3 +46,18 @@ exports.getStreetById = async (req, res, next) => {
         next(error);
     }
 };
+exports.deleteStreetById = async (req, res, next) => {
+    try {
+        const { street_id } = req.query;
+        const result = await StreetService.deleteStreetById(street_id);
+        if (!result) {
+            return res.status(404).json({ status: false, message: "Street not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Street deleted successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
+};

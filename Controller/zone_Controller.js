@@ -46,3 +46,19 @@ exports.getZoneById = async (req, res, next) => {
         next(error);
     }
 };
+exports.deleteZoneById = async (req, res, next) => {
+    try {
+        const { zone_id } = req.query;
+        const result = await ZoneService.deleteZoneById(zone_id);
+        if (!result) {
+            return res.status(404).json({ status: false, message: "Zone not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Zone deleted successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+

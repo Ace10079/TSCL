@@ -46,3 +46,18 @@ exports.getWardById = async (req, res, next) => {
         next(error);
     }
 };
+exports.deleteWardById = async (req, res, next) => {
+    try {
+        const { ward_id } = req.query;
+        const result = await WardService.deleteWardById(ward_id);
+        if (!result) {
+            return res.status(404).json({ status: false, message: "Ward not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Ward deleted successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
+};

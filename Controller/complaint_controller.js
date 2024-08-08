@@ -45,4 +45,19 @@ exports.getComplaintById = async (req, res, next) => {
         next(error);
     }
 };
+exports.deleteComplaintById = async (req, res, next) => {
+    try {
+        const { complaint_id } = req.query;
+        const result = await ComplaintService.deleteComplaintById(complaint_id);
+        if (!result) {
+            return res.status(404).json({ status: false, message: "Complaint not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Complaint deleted successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
+};
 

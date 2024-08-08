@@ -12,3 +12,6 @@ exports.getAllZones = async () => {
 exports.getZoneById = async (zone_id) => {
     return await ZoneModel.findOne({ zone_id });
 };
+exports.deleteZoneById = async (zone_id) => {
+    return await ZoneModel.findOneAndDelete({ zone_id });
+};

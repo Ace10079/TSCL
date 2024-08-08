@@ -45,3 +45,18 @@ exports.getOrganizationById = async (req, res, next) => {
         next(error);
     }
 };
+exports.deleteOrganizationById = async (req, res, next) => {
+    try {
+        const { org_id } = req.query;
+        const result = await OrganizationService.deleteOrganizationById(org_id);
+        if (!result) {
+            return res.status(404).json({ status: false, message: "Organization not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Organization deleted successfully"
+        });
+    } catch (error) {
+        next(error);
+    }
+};

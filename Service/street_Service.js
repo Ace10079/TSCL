@@ -12,3 +12,6 @@ exports.getAllStreets = async () => {
 exports.getStreetById = async (ward_id, street_id) => {
     return await StreetModel.findOne({ ward_id, street_id });
 };
+exports.deleteStreetById = async (street_id) => {
+    return await StreetModel.findOneAndDelete({ street_id });
+};

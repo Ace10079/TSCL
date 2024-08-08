@@ -12,3 +12,6 @@ exports.getAllWards = async () => {
 exports.getWardById = async (zone_id, ward_id) => {
     return await WardModel.findOne({ zone_id, ward_id });
 };
+exports.deleteWardById = async (ward_id) => {
+    return await WardModel.findOneAndDelete({ ward_id });
+};
