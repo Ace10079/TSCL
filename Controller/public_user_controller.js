@@ -29,3 +29,19 @@ exports.getAllPublicUsers = async (req, res, next) => {
         next(error);
     }
 };
+exports.getPublicUserById = async (req, res, next) => {
+    try {
+        const { public_user_id } = req.query;
+        const publicUser = await PublicUserService.getPublicUserById(public_user_id);
+        if (!publicUser) {
+            return res.status(404).json({ status: false, message: "Public user not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Public user retrieved successfully",
+            data: publicUser
+        });
+    } catch (error) {
+        next(error);
+    }
+};

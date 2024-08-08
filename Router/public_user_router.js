@@ -4,5 +4,5 @@ const publicUserController = require('../Controller/public_user_controller');
 
 router.post('/post', publicUserController.createPublicUser);
 router.get('/get', publicUserController.getAllPublicUsers);
-
+router.get('/getbyid', publicUserController.getPublicUserById);
 module.exports = router;

@@ -4,5 +4,6 @@ const newGrievanceAttachmentController = require('../Controller/new_grievance_at
 
 router.post('/post', newGrievanceAttachmentController.createNewGrievanceAttachment);
 router.get('/get', newGrievanceAttachmentController.getAllNewGrievanceAttachments);
+router.get('/getbyid', newGrievanceAttachmentController.getNewGrievanceAttachmentById);
 
 module.exports = router;

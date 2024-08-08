@@ -31,8 +31,8 @@ exports.getAllDepartments = async (req, res, next) => {
 };
 exports.getDepartmentById = async (req, res, next) => {
     try {
-        const { department_id } = req.query;
-        const department = await DepartmentService.getDepartmentById(department_id);
+        const { dept_id } = req.query;
+        const department = await DepartmentService.getDepartmentById(dept_id);
         if (!department) {
             return res.status(404).json({ status: false, message: "Department not found" });
         }

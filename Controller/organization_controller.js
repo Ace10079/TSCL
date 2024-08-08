@@ -29,3 +29,19 @@ exports.getAllOrganizations = async (req, res, next) => {
         next(error);
     }
 };
+exports.getOrganizationById = async (req, res, next) => {
+    try {
+        const { org_id } = req.query;
+        const organization = await OrganizationService.getOrganizationById(org_id);
+        if (!organization) {
+            return res.status(404).json({ status: false, message: "Organization not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Organization retrieved successfully",
+            data: organization
+        });
+    } catch (error) {
+        next(error);
+    }
+};

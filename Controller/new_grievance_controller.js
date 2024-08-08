@@ -29,3 +29,20 @@ exports.getAllNewGrievances = async (req, res, next) => {
         next(error);
     }
 };
+exports.getNewGrievanceById = async (req, res, next) => {
+    try {
+        const { grievance_id } = req.query;
+        const newGrievance = await NewGrievanceService.getNewGrievanceById(grievance_id);
+        if (!newGrievance) {
+            return res.status(404).json({ status: false, message: "New grievance not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "New grievance retrieved successfully",
+            data: newGrievance
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+

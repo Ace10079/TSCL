@@ -8,3 +8,6 @@ exports.createGrievanceWorksheet = async (grievanceWorksheetData) => {
 exports.getAllGrievanceWorksheets = async () => {
     return await GrievanceWorksheetModel.find();
 };
+exports.getGrievanceWorksheetById = async (grievance_id) => {
+    return await GrievanceWorksheetModel.findOne({ grievance_id });
+};

@@ -8,3 +8,6 @@ exports.createGrievanceLog = async (grievanceLogData) => {
 exports.getAllGrievanceLogs = async () => {
     return await GrievanceLogModel.find();
 };
+exports.getGrievanceLogById = async (grievance_id) => {
+    return await GrievanceLogModel.findOne({ grievance_id });
+};

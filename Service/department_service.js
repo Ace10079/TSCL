@@ -8,6 +8,6 @@ exports.createDepartment = async (departmentData) => {
 exports.getAllDepartments = async () => {
     return await DepartmentModel.find();
 };
-exports.getDepartmentById = async (department_id) => {
-    return await DepartmentModel.findOne({ department_id });
+exports.getDepartmentById = async (dept_id) => {
+    return await DepartmentModel.findOne({ dept_id });
 };

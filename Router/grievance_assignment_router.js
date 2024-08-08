@@ -4,5 +4,6 @@ const grievanceAssignmentController = require('../Controller/grievance_assignmen
 
 router.post('/post', grievanceAssignmentController.createGrievanceAssignment);
 router.get('/get', grievanceAssignmentController.getAllGrievanceAssignments);
+router.get('/getbyid', grievanceAssignmentController.getGrievanceAssignmentById);
 
 module.exports = router;

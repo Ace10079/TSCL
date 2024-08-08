@@ -27,3 +27,19 @@ exports.getAllGrievanceLogs = async (req, res, next) => {
         next(error);
     }
 };
+exports.getGrievanceLogById = async (req, res, next) => {
+    try {
+        const { grievance_id } = req.query;
+        const grievanceLog = await GrievanceLogService.getGrievanceLogById(grievance_id);
+        if (!grievanceLog) {
+            return res.status(404).json({ status: false, message: "Grievance log not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Grievance log retrieved successfully",
+            data: grievanceLog
+        });
+    } catch (error) {
+        next(error);
+    }
+};

@@ -4,5 +4,6 @@ const grievanceEscalationController = require('../Controller/grievance_escalatio
 
 router.post('/post', grievanceEscalationController.createGrievanceEscalation);
 router.get('/get', grievanceEscalationController.getAllGrievanceEscalations);
+router.get('/getbyid', grievanceEscalationController.getGrievanceEscalationById);
 
 module.exports = router;

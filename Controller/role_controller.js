@@ -27,3 +27,19 @@ exports.getAllRoles = async (req, res, next) => {
         next(error);
     }
 };
+exports.getRoleById = async (req, res, next) => {
+    try {
+        const { role_id } = req.query;
+        const role = await RoleService.getRoleById(role_id);
+        if (!role) {
+            return res.status(404).json({ status: false, message: "Role not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Role retrieved successfully",
+            data: role
+        });
+    } catch (error) {
+        next(error);
+    }
+};

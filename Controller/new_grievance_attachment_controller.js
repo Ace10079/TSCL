@@ -27,3 +27,19 @@ exports.getAllNewGrievanceAttachments = async (req, res, next) => {
         next(error);
     }
 };
+exports.getNewGrievanceAttachmentById = async (req, res, next) => {
+    try {
+        const { grievance_id } = req.query;
+        const newGrievanceAttachment = await NewGrievanceAttachmentService.getNewGrievanceAttachmentById(grievance_id);
+        if (!newGrievanceAttachment) {
+            return res.status(404).json({ status: false, message: "New grievance attachment not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "New grievance attachment retrieved successfully",
+            data: newGrievanceAttachment
+        });
+    } catch (error) {
+        next(error);
+    }
+};

@@ -4,5 +4,5 @@ const grievanceWorksheetController = require('../Controller/grievance_worksheet_
 
 router.post('/post', grievanceWorksheetController.createGrievanceWorksheet);
 router.get('/get', grievanceWorksheetController.getAllGrievanceWorksheets);
-
+router.get('/getbyid', grievanceWorksheetController.getGrievanceWorksheetById);
 module.exports = router;

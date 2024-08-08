@@ -8,3 +8,6 @@ exports.createPublicUser = async (publicUserData) => {
 exports.getAllPublicUsers = async () => {
     return await PublicUserModel.find();
 };
+exports.getPublicUserById = async (public_user_id) => {
+    return await PublicUserModel.findOne({ public_user_id });
+};

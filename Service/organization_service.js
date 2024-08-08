@@ -8,3 +8,6 @@ exports.createOrganization = async (organizationData) => {
 exports.getAllOrganizations = async () => {
     return await OrganizationModel.find();
 };
+exports.getOrganizationById = async (org_id) => {
+    return await OrganizationModel.findOne({ org_id });
+};

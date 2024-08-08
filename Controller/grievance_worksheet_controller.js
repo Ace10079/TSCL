@@ -27,3 +27,19 @@ exports.getAllGrievanceWorksheets = async (req, res, next) => {
         next(error);
     }
 };
+exports.getGrievanceWorksheetById = async (req, res, next) => {
+    try {
+        const { grievance_id } = req.query;
+        const grievanceWorksheet = await GrievanceWorksheetService.getGrievanceWorksheetById(grievance_id);
+        if (!grievanceWorksheet) {
+            return res.status(404).json({ status: false, message: "Grievance worksheet not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Grievance worksheet retrieved successfully",
+            data: grievanceWorksheet
+        });
+    } catch (error) {
+        next(error);
+    }
+};

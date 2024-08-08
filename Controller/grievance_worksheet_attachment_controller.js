@@ -27,3 +27,19 @@ exports.getAllGrievanceWorksheetAttachments = async (req, res, next) => {
         next(error);
     }
 };
+exports.getGrievanceWorksheetAttachmentById = async (req, res, next) => {
+    try {
+        const { grievance_id } = req.query;
+        const grievanceWorksheetAttachment = await GrievanceWorksheetAttachmentService.getGrievanceWorksheetAttachmentById(grievance_id);
+        if (!grievanceWorksheetAttachment) {
+            return res.status(404).json({ status: false, message: "Grievance worksheet attachment not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Grievance worksheet attachment retrieved successfully",
+            data: grievanceWorksheetAttachment
+        });
+    } catch (error) {
+        next(error);
+    }
+};

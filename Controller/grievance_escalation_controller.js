@@ -29,3 +29,19 @@ exports.getAllGrievanceEscalations = async (req, res, next) => {
         next(error);
     }
 };
+exports.getGrievanceEscalationById = async (req, res, next) => {
+    try {
+        const { grievance_id } = req.query;
+        const grievanceEscalation = await GrievanceEscalationService.getGrievanceEscalationById(grievance_id);
+        if (!grievanceEscalation) {
+            return res.status(404).json({ status: false, message: "Grievance escalation not found" });
+        }
+        res.status(200).json({
+            status: true,
+            message: "Grievance escalation retrieved successfully",
+            data: grievanceEscalation
+        });
+    } catch (error) {
+        next(error);
+    }
+};

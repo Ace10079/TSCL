@@ -8,7 +8,6 @@ const GrievanceAssignmentSchema = new Schema({
     user_id: String,
     assigned_to: String,
     assigned_time: { type: Date, default: Date.now },
-    last_updated_time: { type: Date, default: Date.now }
 }, { timestamps: true });
 
 const GrievanceAssignmentModel = db.model('GrievanceAssignment', GrievanceAssignmentSchema);
