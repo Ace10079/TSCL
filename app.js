@@ -23,9 +23,12 @@ const roleRouter = require('./Router/role_router');
 const roleAccessLevelRouter = require('./Router/role_access_level_router');
 const DepartmentRouter=require('./Router/department_routes')
 const OrganzationRouter=require('./Router/organization_routes');
+const LoginRouter=require('./Router/login_router');
+const PublicLoginRouter=require('./Router/public_login');
 
 app.use(body_parser.json());
 app.use(cors());
+app.use('/login',LoginRouter)
 app.use('/zone', zoneRouter);
 app.use('/ward', wardRouter);
 app.use('/street', streetRouter);
@@ -44,6 +47,7 @@ app.use('/role', roleRouter);
 app.use('/role-access-level', roleAccessLevelRouter);
 app.use('/department',DepartmentRouter);
 app.use('/organization',OrganzationRouter);
+app.use('/public-login',PublicLoginRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
